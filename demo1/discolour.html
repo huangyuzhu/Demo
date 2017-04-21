@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+#box{width:330px;height:100px;margin:10px auto;}
+#box div{float:left;width:100px;height:100px;margin:0 5px;background:red;}
+</style>
+<body>
+	<center><button>点击将DIV变成粉色</button></center>
+	<div id="box">
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	</div>
+<script>
+	window.onload = function (){
+		var Div = document.getElementById("box").getElementsByTagName("div");
+		var Btn = document.getElementsByTagName("button")[0];
+		Btn.onclick = function (){
+			for(var i=0;i<Div.length;i++) {
+				Div[i].style.background ="pink"
+			}
+		}	
+	}
+</script>
+</body>
+</html>

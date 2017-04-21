@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p><input type="text" value="江西"></p>
+	<p><input type="text" value="九江市"></p>
+	<p><button>传参</button></p>
+</body>
+<script>
+	var myFun=function(a,b){
+		alert(a.value)
+		alert(b.value)
+	}
+	window.onload=function(){
+		var inputs=document.getElementsByTagName("input");
+		var Btn=document.getElementsByTagName("button")[0]
+		Btn.onclick=function(){
+			myFun(inputs[0],inputs[1])
+		}
+	}
+</script>
+</html>

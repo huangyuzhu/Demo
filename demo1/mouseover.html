@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标滑入或滑出改变样式</title>
+	<style>
+	body{color:#fff;font:12px/1.5 Tahoma;}
+    #box{width:150px;height:150px;margin:0 auto;padding:10px;background:pink;border:10px solid orange;cursor:crosshair;}
+    #box.hover{color:red;background:orange;border:10px solid pink;}
+
+	</style>
+</head>
+<body>
+	 <div id="box">鼠标滑进改变样式 滑出恢复样式</div>
+</body>
+<script>
+	window.onload=function(){
+		var box=document.getElementById("box");
+		box.onmouseover=function(){
+			box.className="hover"
+		}
+		box.onmouseout=function(){
+			box.className=""
+		}
+	}
+</script>
+</html>

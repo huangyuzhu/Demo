@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页换肤</title>
+	<style>
+	    body,ul,li{margin:0;padding:0;}
+		html,body{height:100%;}
+		body{font:12px/1.5 Tahoma;}
+		li{list-style-type:none;}
+		a:link,a:visited{text-decoration:none;}
+		a:hover{text-decoration:underline;}
+		#box{width:500px;margin:0 auto;overflow:hidden;zoom:1;}
+		#Bg,#nav{overflow:hidden;zoom:1;}
+		#Bg{margin:10px 0;}
+		#Bg li{float:left;width:6px;height:6px;cursor:pointer;overflow:hidden;margin-right:10px;text-indent:-9999px;border-width:4px;border-style:solid;}
+		#Bg li.current{background:#fff!important;}
+		#red{border-color:red;background:red;}
+		#blue{border-color:blue;background:blue;}
+		#yellow{border-color:yellow;background:yellow;}
+		#nav{border:1px solid #fff;}
+		#nav li{float:left;width:82px;line-height:25px;text-align:center;border-right:1px solid #fff;}
+		#nav li.last{width:83px;border-right-width:0;}
+		#nav li a{color:#fff;}
+	</style>
+	<link href="blue.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="box">
+		<ul id="Bg">
+			<li id="red" title="红色">红</li>
+			<li id="blue" class="current" title="蓝色">蓝</li>
+			<li id="yellow" title="黄色">黄</li>
+		</ul>
+		<ul id="nav">
+	        <li><a href="javascript:;">新闻</a></li>
+	        <li><a href="javascript:;">娱乐</a></li>
+	        <li><a href="javascript:;">体育</a></li>
+	        <li><a href="javascript:;">电影</a></li>
+	        <li><a href="javascript:;">音乐</a></li>
+	        <li class="last"><a href="javascript:;">旅游</a></li>
+        </ul>
+	</div>
+	<script>
+	window.onload = function ()
+	{
+		var oLink = document.getElementsByTagName("link")[0];
+		var oBg = document.getElementById("Bg").getElementsByTagName("li");
+		
+		for(var i = 0; i< oBg.length; i++)
+		{		
+			oBg[i].onclick = function ()
+			{
+				for(var k in oBg) oBg[k].className = "";
+				this.className = "current";
+				oLink['href'] = this.id + ".css";				
+			}	
+		}
+		
+	};
+	</script>
+</body>
+</html>
