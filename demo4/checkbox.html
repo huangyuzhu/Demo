@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       *{margin:0;padding:0;list-style:none}
+		label,input,a{vertical-align:middle;}
+		label{padding:0 10px 0 5px;}
+		a{color:#09f;text-decoration:none;}
+		a:hover{color:red;}
+		#box{width:120px;margin:10px auto;padding:10px 5px;border:1px solid #666;border-radius:5px;background:#fafafa;}
+		p{padding-bottom:10px;border-bottom:1px solid #666;}
+		p label{font-weight:700;}
+		li{margin-top:10px;}
+	</style>
+</head>
+<body>
+	<div id="box">
+	<p><input type="checkbox"><label>全选</label><a href="javascript:">反选</a></p>
+		<ul>
+			<li><input type="checkbox"><label>选项一</label></li>
+			<li><input type="checkbox"><label>选项二</label></li>
+			<li><input type="checkbox"><label>选项三</label></li>
+			<li><input type="checkbox"><label>选项四</label></li>
+			<li><input type="checkbox"><label>选项五</label></li>
+			<li><input type="checkbox"><label>选项六</label></li>
+		</ul>
+	</div>
+	<script>
+		window.onload=function(){
+			var fanxuan=document.getElementsByTagName("a")[0],
+			    input=document.getElementsByTagName("input"),
+			    label=document.getElementsByTagName("label")[0];
+
+			  var isCheckAll=function(){
+			  	 for(var i=1,n=0;i<input.length;i++){
+			  	 	 input[i].checked && n++;
+			  	 }
+			  	 input[0].checked=n==input.length-1;
+			  	 label.innerHTML=input[0].checked?"全不选":"全选"
+			  }
+			  //全选或全不选
+			  input[0].onclick=function(){
+				  	for(var i=0;i<input.length;i++){
+				  	 input[i].checked=this.checked;
+				  }
+				  isCheckAll()
+			  }
+			  //反选
+			  fanxuan.onclick=function(){
+			  	 for(var i=0;i<input.length;i++){
+			  	 	 input[i].checked=!input[i].checked
+			  	 }
+			  	 isCheckAll()
+			  }
+			  //如果单个点击全部复选框改变上面的全选为全不选
+			  for(var i=1;i<input.length;i++){
+			  	  input[i].onclick=function(){
+			  	  	isCheckAll()
+			  	  }
+			  }
+			  
+		}
+	</script>
+</body>
+</html>
