@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="clock">
+		<span></span>点<span></span>分<span></span>秒
+	</div>
+	<script>
+		window.onload=function(){
+			var clock=document.getElementById("clock"),
+			    spans=clock.getElementsByTagName("span");
+			  setInterval(getTimes,1000)
+			  getTimes()
+			  function getTimes(){
+			  	  var today=new Date(),
+			  	      todays=[today.getHours(), today.getMinutes(), today.getSeconds()];
+			  	      for(var i in todays){
+			  	      	 spans[i].innerHTML=format(todays[i]);
+			  	      }
+			  }
+			  function format(a){
+                 return a.toString().replace(/^(\d)$/, "0$1")
+			  }
+		}
+	</script>
+</body>
+</html>
