@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*var sec=document.getElementById("sec"),
+		    show=document.getElementById("show"),
+		    secshow=document.getElementById("secshow");
+		    show.onclick=function(){
+		    	var secT=parseInt(sec.value);
+		    	console.log(secT)
+		    	var time=setInterval(function(){
+		    		if(secT==0){
+		    			clearInterval(time)
+		    		}else{
+		    			secshow.innerHTML=secT--;
+		    		}
+		    	},1000)
+		    }*/
+		   /* var arr=[]
+		   function select(start,end){
+		   	  var num=end-start+1;
+		   	  return n=Math.floor(Math.random()*num+start)
+		   }
+		   for(var i=0;i<10;i++){
+		   	  arr.push(select(10,100))
+		   }
+		   alert(arr)*/
+
+		   //this作为普通方法来调用
+		   /*function person(){
+		   	   this.name="hyz";
+		   	   console.log(this)//window
+		   	   console.log(this.name)//hyz
+		   }
+		   person()*/
+
+		   //this作为方法来调用
+		   /*var name="wy";
+		   var person={
+                name:"hyz",
+                showName:function(){
+                	console.log(this.name)
+                }
+		   }
+		   person.showName()//hyz
+		   var Shows=person.showName;
+		   Shows()//wy*/
+
+		   //this作为构造函数来调用
+		  /* function Person(name){
+		   	  this.name=name
+		   }
+		
+		   function person(name){
+		   	   var o={};
+		   	   o.__proto__=Person.prototype;
+		   	   Person.call(o,name);
+		   	   return o;
+		   }
+		   var personB=person("hyz")
+		   console.log(personB.name)*/
+
+		   //call或apply方法的调用  最大的作用就是能改变this关键字的指向.
+		   /*var name="hyz";
+		   var Person={
+		   	    name:"wy",
+		   	    showName:function(){
+		   	    	console.log(this.name)
+		   	    }
+		   }
+
+		   Person.showName.call()//hyz call方法里面的第一个参数为空，默认指向window*/
+
+
+            //FruitB调用fruitA的change方法，将fruitA中的this绑定到对象FruitB上。
+		  /* function fruitA(n1,n2){
+		   	   this.n1=n1;
+		   	   this.n2=n2;
+		   	   this.change=function(x,y){
+                   this.n1=x;
+                   this.n2=y;
+		   	   }
+		   }
+
+           var fruitA=new fruitA("apple","banana")
+           var fruitB={
+           	    n1:"pear",
+           	    n2:"orange"
+           }
+           fruitA.change.call(fruitB,"11","22")
+           console.log(fruitB.n1)*/
+	</script>
+</body>
+</html>
